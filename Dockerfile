@@ -1,4 +1,4 @@
-FROM kasmweb/core-debian-trixie:1.17.0
+FROM kasmweb/core-debian-bookworm:1.17.0
 USER root
 
 ENV HOME /home/kasm-default-profile
