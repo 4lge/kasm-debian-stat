@@ -20,8 +20,8 @@ RUN apt-get update
 RUN apt-get install -y r-base r-base-dev
 RUN wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.09.1-401-amd64.deb && dpkg -i rstudio-2025.09.1-401-amd64.deb || apt-get install -f -y
 RUN wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.25/quarto-1.8.25-linux-amd64.deb && dpkg -i quarto-1.8.25-linux-amd64.deb || apt-get install -f -y
-RUN apt-get install pspp emacs-gtk elpa-ess texlive-latex-extra auctex preview-latex-style texlive-bibtex-extra texlive-fonts-extra texlive-formats-extra texlive-extra-utils
-RUN apt install texmaker  libwmf-bin  texlive-lang-german 
+RUN apt-get install -y pspp emacs-gtk elpa-ess texlive-latex-extra auctex preview-latex-style texlive-bibtex-extra texlive-fonts-extra texlive-formats-extra texlive-extra-utils
+RUN apt install -y texmaker  libwmf-bin  texlive-lang-german 
 RUN apt-get clean
 
 ######### End Customizations ###########
