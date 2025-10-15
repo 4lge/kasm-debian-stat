@@ -19,9 +19,13 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cran.gpg] https://cloud.r-project.o
 RUN apt-get update
 RUN apt-get install -y r-base r-base-dev
 RUN wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.09.1-401-amd64.deb && dpkg -i rstudio-2025.09.1-401-amd64.deb || apt-get install -f -y
+RUN perl -pi -e "%/usr/lib/rstudio/rstudio%/usr/lib/rstudio/rstudio --no-sandbox %" /usr/share/applications/rstudio.desktop
 RUN wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.25/quarto-1.8.25-linux-amd64.deb && dpkg -i quarto-1.8.25-linux-amd64.deb || apt-get install -f -y
 RUN apt-get install -y pspp emacs-gtk elpa-ess texlive-latex-extra auctex preview-latex-style texlive-bibtex-extra texlive-fonts-extra texlive-formats-extra texlive-extra-utils
 RUN apt install -y texmaker  libwmf-bin  texlive-lang-german 
+RUN apt install -y flatpak
+RUN flatpak install -y app/us.zoom.Zoom/x86_64/stable
+RUN echo -e "/bin/sh\nflatpak run us.zoom.Zoom" > /usr/bin/zoom && chmod 755 /usr/bin/zoom 
 RUN apt-get clean
 
 ######### End Customizations ###########
