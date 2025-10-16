@@ -24,7 +24,7 @@ RUN wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.25/quar
 RUN apt-get install -y pspp emacs-gtk elpa-ess texlive-latex-extra auctex preview-latex-style texlive-bibtex-extra texlive-fonts-extra texlive-formats-extra texlive-extra-utils
 RUN apt install -y texmaker  libwmf-bin  texlive-lang-german 
 RUN apt install -y flatpak
-RUN flatpak install -y app/us.zoom.Zoom/x86_64/stable
+RUN flatpak install -y us.zoom.Zoom
 RUN echo -e "/bin/sh\nflatpak run us.zoom.Zoom" > /usr/bin/zoom && chmod 755 /usr/bin/zoom 
 RUN apt-get clean
 
