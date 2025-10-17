@@ -26,7 +26,7 @@ RUN apt install -y texmaker  libwmf-bin  texlive-lang-german
 RUN apt install -y flatpak
 RUN flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrep
 RUN flatpak update -y
-RUN flatpak install -y us.zoom.Zoom/x86_64/stable
+RUN flatpak install -y zoom
 RUN echo -e "/bin/sh\nflatpak run us.zoom.Zoom/x86_64/stable" > /usr/bin/zoom && chmod 755 /usr/bin/zoom 
 RUN apt-get clean
 
